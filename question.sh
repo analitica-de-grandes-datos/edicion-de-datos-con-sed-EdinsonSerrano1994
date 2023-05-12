@@ -41,3 +41,10 @@
 #
 #  >>> Escriba su codigo a partir de este punto <<<
 #
+
+# se cambia la fecha de DD/MM/YY a YYYY-MM-DD
+
+sed 's/^\([0-9][0-9]\)\/\([0-9][0-9]\)\/\([0-9][0-9]\)/20\3-\2-\1/g | s/^\([0-9]\)\/\([0-9]\)\/\([0-9][0-9][0-9][0-9]\)/\3-0\2-0\1/g | s/.*/\U&/ | s/,/./ | s/;/,/g | s/\N,,/\N\,\\N\,\\N/g | s/A,,N/A\,\\N\,\\N/g | s/N,1/\\N\,1/g | s/C\,\\N,\\N/C\,\\N\,/g | s/C\,\\N\,/C\,\\N,\\N/g' < data.csv > output.csv
+
+
+
